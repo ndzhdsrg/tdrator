@@ -33,4 +33,15 @@ publishing {
             version = '1.0.0'
         }
     }
+
+    repositories {
+
+        maven {
+            name = "GitHubPackages"
+            url = uri("https://maven.pkg.github.com/ndzhdsrg/tdrator")
+            credentials {
+                username = project.findProperty("gpr.user") ?: System.getenv("USERNAME")
+            }
+        }
+    }
 }
